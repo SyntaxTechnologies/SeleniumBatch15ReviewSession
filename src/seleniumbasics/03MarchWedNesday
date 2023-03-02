@@ -1,0 +1,6 @@
+1- Xpath [ Relative/Absolute]
+//tagName[@attributeName='value']
+//tagName[text()='innerText']
+//tagName[contains(@AttributeName/text(), 'attributeValue/InnerText')]
+
+Talk about absolute path and Relative path with more examples
