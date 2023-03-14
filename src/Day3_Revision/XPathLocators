@@ -1,0 +1,92 @@
+XPath:
+     Absolute Xpath [/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[1]/input]
+     Relative Xpath [custom Xpath]
+     1. //tagName[@attributeName='value']
+        //input[@id='userId'and @title='Email']
+        //input[@id='userId'or @title='Email']
+
+     2. //tagName[text()='InnerText']
+     3. //tagName[contains(@attribute,'value')]
+        //input[contains(@id,'userId')]
+     4. //tagName[contains(text(), 'innerText')]
+
+
+     //input[@='iserId']
+
+     =====================================================================
+     XPath
+       -Absolute [ Starts from html and /] -Explain
+       -Relative [custom Xpath]
+                  //tagName[@attribute1='value1'] [ Use @ only before attributes]
+                  //tagName[text()='innerText']
+                  //tagName[contains(@attribute, 'attributeValue')]
+                  //tagName[contains(text(), 'innerText')]
+
+                  //tagName[@attribute1='value1' and @attribute2='value2']
+                  //tagName - //a, //input
+                  //input[@*='firstname']
+                  //tagName[@href]
+
+                  //tagName[@attribute1='value1' or @attribute2='value2']
+                  -> Attribute + text()
+                  -> Attribute + contains()
+
+
+                 //tagName[@attribute1='value1' and @attribute2='value2']
+
+                 starts-with()
+                //tagName[starts-with(text(),'innerText')] - Amazon.in
+                //a[@href] - 363 links
+                ex: //a[starts-with(text(),'Amazon')] - 11 links
+                https://classic.crmpro.com/
+
+                //tagName[starts-with(@attribute,'value')]
+                https://app.hubspot.com/login
+                //input[starts-with(@type,'email')]
+
+                ends-with() [ Earlier it was there but not now]
+                 Is XPath a Selenium property or a browser Property
+                 Is Xpath browser specific
+                 Show the same thing on FF
+
+               Indexing Concept in Xpath
+               https://naveenautomationlabs.com/opencart/index.php?route=account/login
+               //input[@class='form-control']
+               (//input[@class='form-control'])[1]
+               (//input[@class='form-control'])[position()=1]
+               https://naveenautomationlabs.com/opencart/index.php?route=account/register
+               (//input[@class='form-control'])
+
+     (//*[local-name()='svg']//*[name()='path' and @class='_34RNph'])[2]
+
+     CSS Selectors: https://app.hubspot.com/login/
+     #id [#username]
+     tagName#id
+     input#username [FASTER]
+
+     .class [.private-form__input-wrapper]
+     tagName.className [div.private-form__input-wrapper]
+
+     .c1.c2.c3.....cn [.form-control.private-form__control.login-email]
+     tagName.c1.c2.c3..............cn [input.form-control.private-form__control.login-email]
+
+     =====================================================================================================================
+     //        ChromeOptions options = new ChromeOptions();
+     //        options.addArguments("--remote-allow-origins=*");
+     //        WebDriver driver = new EdgeDriver(options);
+     =====================================================================================================================
+     Checkboxes:
+     https://itera-qa.azurewebsites.net/home/automation
+
+     //input[@type='checkbox' and contains(@id,'day')]
+     //label/input[@type='checkbox']
+
+     ======================================================================================================================
+     Alerts [https://the-internet.herokuapp.com/]
+     https://the-internet.herokuapp.com/javascript_alerts
+     JS Alert: alert/prompt/confirm [JS pop ups cannot have locator path]
+     NOTE: JS POP up cant be multiple and will have at the max one pop up, also JS pop up will come when you perform some action on WebPage
+     https://mail.rediff.com/cgi-bin/login.cgi[HW]
+
+     but BASIC AUTH will come on the page loading itself
+     https://the-internet.herokuapp.com/basic_auth
