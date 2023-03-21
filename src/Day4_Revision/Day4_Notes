@@ -1,0 +1,64 @@
+// tagName[@attributeName='attributeValue']
+// tagName[text()='innerText']
+// tagName[contains(@attributeName, 'attributeValue')]
+// tagName[contains(text(), 'innerText')]
+
+https://www.facebook.com/
+// attributes + text  [//button[text()='Log in' and @name='login']
+// text() + contains() [//button[text()='Log in' and contains(@name,'log')]]
+// and, or
+
+https://www.orangehrm.com/hris-hr-software-demo/
+// indexing [(//input[@required='required'])[position()=1]
+            (//input[@required='required'])[1]
+            last webElement->(//input[@required='required'])[last()]
+            second last -> (//input[@required='required'])[last()-n]
+
+
+<div class ="abc" name ="cdr">
+ <label id="xc" class ="efr"></label> [w.r.t button this is preceding-sibling]
+ <button id="xyc" class ="eyfr"/>  [w.r.t label this is following-sibling]
+ <a href ="https://www.google.com"/>
+</div>
+
+div-label [pc r'ship]
+div-button[pc r'ship]
+label-button [siblings]
+
+https://app.hubspot.com/login/
+traversing to the parent tag
+//input[@id='username']/../../../../../../../../../../..
+//input[@id='username']/parent::div/parent::div/parent::div/parent::div/parent::form
+
+//tagName[@attributeName='value']/..
+//tagName[@attributeName='value']/parent::ParentTagName
+
+// following-sibling
+   https://naveenautomationlabs.com/opencart/index.php?route=account/login
+   //label[text()='E-Mail Address']/following-sibling::input
+
+   //input[@id='input-email']/preceding-sibling::label
+
+
+https://app.hubspot.com/login/
+   //i18n-string[text()='Email address']/parent::span/parent::label/parent::div/following-sibling::div/input
+
+   Ancestors:
+   //i18n-string[text()='Email address']/ancestor::label/parent::div/following-sibling::div/input
+
+   =======================================
+   Xpath Axes:
+    parent
+    following-sibling
+    preceding-sibling
+    ancestor
+   ======================================
+
+       // https://www.espncricinfo.com/series/australia-in-india-2022-23-1348637/india-vs-australia-2nd-odi-1348657/full-scorecard
+       // Create a generic Xpath where by changing the name of player we should be able to know the runs scored by him
+       //span[text()='Virat Kohli']/parent::span/parent::a/parent::td/following-sibling::td/strong
+
+          // Using ancestors
+       //span[text()='Virat Kohli']/ancestor::td/following-sibling::td/strong
+
+
